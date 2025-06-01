@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    .profile span {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      margin: 0.5rem 0;
+    }
+
+    .search-box {
+      margin: 1rem 0 2rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .card span {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="C:\Users\Omkar\OneDrive\Desktop\image1.jpg" alt="Profile" />
+    <span>Hello, User</span>
+    
+  </div>
+
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search companies..." onkeyup="filterCompanies()" />
+  </div>
+
+  <div class="grid" id="companyGrid">
+    <!-- Each card is an anchor with data-name attribute -->
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/apple.html" target="_blank" class="card" data-name="apple">
+      <img src="https://logo.clearbit.com/apple.com" alt="Apple"><span>Apple</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/GOOGLE.HTML" target="_blank" class="card" data-name="google">
+      <img src="https://logo.clearbit.com/google.com" alt="Google"><span>Google</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/microsoft.html" target="_blank" class="card" data-name="microsoft">
+      <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft"><span>Microsoft</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/amezone.html" target="_blank" class="card" data-name="amazon">
+      <img src="https://logo.clearbit.com/amazon.com" alt="Amazon"><span>Amazon</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/meta.html" target="_blank" class="card" data-name="meta">
+      <img src="https://logo.clearbit.com/meta.com" alt="Meta"><span>Meta</span>
+    </a>
+    
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/tesla.html" target="_blank" class="card" data-name="tesla">
+      <img src="https://logo.clearbit.com/tesla.com" alt="Tesla"><span>Tesla</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/nvidia.html" target="_blank" class="card" data-name="nvidia">
+      <img src="https://logo.clearbit.com/nvidia.com" alt="NVIDIA"><span>NVIDIA</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/intel.html" target="_blank" class="card" data-name="intel">
+      <img src="https://logo.clearbit.com/intel.com" alt="Intel"><span>Intel</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/samsung.html" target="_blank" class="card" data-name="samsung">
+      <img src="https://logo.clearbit.com/samsung.com" alt="Samsung"><span>Samsung</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/ibm.html" target="_blank" class="card" data-name="ibm">
+      <img src="https://logo.clearbit.com/ibm.com" alt="IBM"><span>IBM</span>
+    </a>
+
+   <a href="file:///C:/Users/Omkar/OneDrive/Desktop/airbnb.html" target="_blank" class="card" data-name="airbnb">
+      <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb"><span>Airbnb</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/salesforce.html" target="_blank" class="card" data-name="salesforce">
+      <img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce"><span>Salesforce</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/adobe.html" target="_blank" class="card" data-name="adobe">
+      <img src="https://logo.clearbit.com/adobe.com" alt="Adobe"><span>Adobe</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/capgemini.html" target="_blank" class="card" data-name="asus">
+      <img src="https://logo.clearbit.com/capgemini.com" alt="Capgemini"><span>Capgemini</span>
+    </a>
+    <a href="file:///C:/Users/Omkar/OneDrive/Desktop/tcs.html" target="_blank" class="card" data-name="tcs">
+   <img src="https://logo.clearbit.com/tcs.com" alt="TCS"><span>TCS</span>
+  </a>
+  <a href="file:///C:/Users/Omkar/OneDrive/Desktop/mercedesbenz.html" target="_blank" class="card" data-name="mercedes">
+  <img src="https://logo.clearbit.com/mercedes-benz.com" alt="Mercedes-Benz"><span>Mercedes-Benz</span>
+</a>
+<a href="file:///C:/Users/Omkar/OneDrive/Desktop/ACENTURE.HTML" target="_blank" class="card" data-name="accenture">
+  <img src="https://logo.clearbit.com/accenture.com" alt="Accenture"><span>Accenture</span>
+</a>
+<a href="file:///C:/Users/Omkar/OneDrive/Desktop/COGNIZANT.HTML" target="_blank" class="card" data-name="cognizant">
+  <img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant"><span>Cognizant</span>
+</a>  
+  </div>
+  <br>
+ 
+<button type="submit" class="logout-btn"required><a href="file:///C:/Users/Omkar/OneDrive/Desktop/ramesh01idt.html">Log out</button>
+  <script>
+    function filterCompanies() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll("#companyGrid .card");
+
+      cards.forEach(card => {
+        const name = card.getAttribute("data-name");
+        card.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
